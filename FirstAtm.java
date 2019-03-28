@@ -19,9 +19,9 @@ public class FirstAtm {
     {
         String result = "error";
 
-        String a = "1996-02 jelszo1 520.36";
-        String b = "1997-01 jelszo2 48.20";
-        String c = "1991-08 jelszo3 96.74";
+        String a = "1996-02 jelszo1 8520.36";
+        String b = "1997-01 jelszo2 7548.20";
+        String c = "1991-08 jelszo3 9126.74";
 
         if (acctNum.equals(a.substring(0, a.indexOf(" "))) && 
                 pwd.equals(a.substring(a.indexOf(" ")+1,a.lastIndexOf(" "))))
@@ -104,18 +104,18 @@ public class FirstAtm {
 
             count++;
 
-            if (count >= 3 && origBal.equals("Hibaüzenet!")){
+            if (count >= 3 && origBal.equals("error")){
                 System.out.print("Három sikertelen bejelentkezési kísérlet után a kártyáját felfüggesztettük.");
                 System.exit(0);
             }
-            if (!(origBal.equals("Hibaüzenet!"))){
+            if (!(origBal.equals("error"))){
                 System.out.println("\nA rendelkezésre álló összeg: $ "+ origBal);
             }
             else
                 System.out.println(origBal);
 
 
-        }while(origBal.equals("Hibaüzenet!"));
+        }while(origBal.equals("error"));
 
         currentBal=Double.parseDouble(origBal);
         //Itt lehet megadni a parancsokat a menuben..
